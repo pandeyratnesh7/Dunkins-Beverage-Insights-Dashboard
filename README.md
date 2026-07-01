@@ -61,7 +61,7 @@ The raw beverage sales data was loaded into SQL Server using a staging table. SQ
 
 The SSIS package loads raw beverage sales data from CSV into the SQL Server staging table, runs SQL cleaning transformations, validates the cleaned data, and creates the Power BI reporting view.
 
-
+https://github.com/pandeyratnesh7/Dunkins-Beverage-Insights-Dashboard/blob/main/SSIS/SSIS_Control_Flow.png.png
 
 ## Power BI Dashboard
 
