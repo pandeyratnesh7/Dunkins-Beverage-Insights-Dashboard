@@ -1,0 +1,38 @@
+SSIS ETL Guide - Dunkins Beverage Insights Project
+
+Goal:
+Load raw CSV data into SQL Server staging table and transform it into a cleaned reporting table.
+
+Tools:
+- Visual Studio with SQL Server Data Tools / Integration Services extension
+- SQL Server
+- SQL Server Management Studio
+- Provided file: data/dunkins_beverage_raw_data.csv
+
+Package Design:
+1. Create a new Integration Services Project.
+2. Add an Execute SQL Task to create or truncate dbo.BeverageSales_Staging.
+3. Add a Data Flow Task named Load Raw Beverage CSV.
+4. Inside Data Flow:
+   a. Add Flat File Source.
+   b. Connect it to data/dunkins_beverage_raw_data.csv.
+   c. Confirm comma delimiter and first row has column names.
+   d. Add Data Conversion if needed.
+   e. Add OLE DB Destination.
+   f. Select dbo.BeverageSales_Staging as destination.
+   g. Map all columns.
+5. Add Execute SQL Task after the Data Flow Task.
+6. Use sql/03_data_cleaning_transformations.sql logic to load dbo.BeverageSales_Clean.
+7. Run the package.
+8. Validate row count using:
+   SELECT COUNT(*) FROM dbo.BeverageSales_Staging;
+   SELECT COUNT(*) FROM dbo.BeverageSales_Clean;
+
+Recommended SSIS Components:
+- Execute SQL Task
+- Data Flow Task
+- Flat File Source
+- Data Conversion
+- Derived Column
+- Conditional Split
+- OLE DB Destination
