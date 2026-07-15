@@ -32,8 +32,6 @@ The goal of this project is to analyze beverage sales performance and identify k
 
 ![Dashboard Preview](DB_Dashboard.png)
 
-D:\PROJECT_Dunkin_BI
-
 ## Project Workflow
 
 Excel Raw Data → SSIS ETL → SQL Server Staging Table → SQL Data Cleaning → SQL Reporting View → Power BI Dashboard → GitHub Portfolio
